@@ -14,13 +14,6 @@ class User(UserMixin, db.Model):
     password_hash=db.Column(db.String(128))
 
 
-   # d = {}
-    #for colunm in row.__table__.columns:
-    #    d[column.name] = str(getattr(row, column.name))
-
-    def __repr__(self):
-        return '<User {}>'.format(self.username)
-
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
