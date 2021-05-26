@@ -1,10 +1,9 @@
-from app import app, db
-import re
 from flask import request, jsonify
-from app import database
+from flask_login import current_user, login_required, login_user, logout_user
+from app import app, db, database
 from app.database import get_db, init_db
 from app.models import User
-from flask_login import current_user, login_required, login_user, logout_user
+import re
 
 @app.errorhandler(404)
 
